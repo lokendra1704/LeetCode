@@ -12,8 +12,7 @@ class Solution:
         """
         Do not return anything, modify root in-place instead.
         """
-        self.first, self.second, self.prev = None, None, TreeNode(
-            -float("inf"))
+        self.first, self.second, self.prev = None, None, TreeNode(-float("inf"))
 
         def inorder(root):
             if not root:
