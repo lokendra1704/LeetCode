@@ -17,5 +17,5 @@ class Solution:
         return True
 
     ##Recursive
-    def isValid(root, lower_bound=-float("inf"), upper_bound = float("inf") ):
-        return not root or (lower_bound < root.val < upper_bound) and (isValid(root.left,lower_bound,root.val) and isValid(root.right, root.val, upper_bound))
+    def isValid(self,root, lower_bound=-float("inf"), upper_bound = float("inf") ):
+        return not root or (lower_bound < root.val < upper_bound) and (self.isValid(root.left,lower_bound,root.val) and self.isValid(root.right, root.val, upper_bound))
