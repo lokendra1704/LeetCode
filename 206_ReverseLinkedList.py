@@ -7,3 +7,12 @@ class Solution:
             prev = cur
             cur = future
         return prev
+
+    #Recursive
+    def recur(self, head):
+        if not head: return head
+        if not head.next : return head
+        node = recur(head.next)
+        head.next.next = head
+        head.next = None
+        return node
