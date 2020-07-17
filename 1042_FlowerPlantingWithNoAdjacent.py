@@ -1,57 +1,34 @@
-#85.81%
+#Difficulty = Medium
+#Submission Speed = 85.81%
+'''
+#The Algorithm is similar to Graph coloring algorithm.
+After making the graph from edge lists,
+We will traverse every node one by one. For every node, create a fresh new list of choices of flowers
+While Traversing a particular node (say NODE A), we will check its neighbours and if any of the neighbour has been assigned
+flower (say flower 'X') we will remove that flower ('X') from the list of choices of the corresponding Node (NODE A)
+'''
+'''
+If  E = Number of Edges
+    V = Number of Vertices/Nodes
+Time Complexity =  O(V+E)
+Space Complexity = O(2V+E)
+'''
 from collections import defaultdict
 class Solution:
     def gardenNoAdj(self, N, paths):
+
+        #Create Graph
         graph = defaultdict(list)
         for i in paths:
-            graph[i[0]].append(i[1])
+            graph[i[0]].append(i[1])                #Since Graph is Bidirectional, we need to add edge both sides
             graph[i[1]].append(i[0])
-        color = []
-        for i in range(1,N+1):
-            choice = [1, 2, 3, 4]
-            for k in graph[i]:
+        flowers = []
+        for i in range(1, N + 1):                   #We will traverse every node one by one
+            choice = [1, 2, 3, 4]                   #create a fresh new list of choices of flowers
+            for k in graph[i]:                      #check its neighbours
                 try:
-                    choice.remove(color[k-1])
+                    choice.remove(flowers[k-1])     #if any of the neighbour has been assigned flower (say flower 'X') we will remove that flower ('X')
                 except:
                     pass
-            color.append(choice[0])
-        return color
-
-
-#66.94%
-from collections import defaultdict, deque
-class Solution:
-    def gardenNoAdj(self, N, paths):
-        if not paths and not N:
-            return []
-        color = [1] * N
-        if not paths and N:
-            return color
-        graph = defaultdict(list)
-        for i in paths:
-            graph[i[0]].append(i[1])
-            graph[i[1]].append(i[0])
-        visited = {}
-        def explore(source, color=color, visited=visited):
-            q = deque([source])
-            visited[source] = True
-            while q:
-                for i in range(len(q)):
-                    node = q.popleft()
-                    choice = [1, 2, 3, 4]
-                    for k in graph[node]:
-                        try:
-                            choice.remove(color[k - 1])
-                        except:
-                            pass
-                        if k not in visited:
-                            visited[k] = True
-                            q.append(k)
-                    color[node - 1] = choice[0]
-        for i in graph:
-            if i not in visited:
-                explore(i)
-        return color
-
-x = Solution().gardenNoAdj(3, [[1, 2], [2, 3], [3, 1]])
-print(x)
+            flowers.append(choice[0])               #Select the first flower from the remaining choices
+        return flowers
