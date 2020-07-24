@@ -1,6 +1,6 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        
+
         self.n = len(grid)
         if self.n:
             self.m = len(grid[0])

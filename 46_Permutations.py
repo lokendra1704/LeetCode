@@ -1,3 +1,4 @@
+'''
 class Solution:
     def permute(self, nums):
         l = []
@@ -12,9 +13,9 @@ class Solution:
         perm(nums, 0, len(nums))
         return l
 
-
+'''
 class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
+    def permute(self, nums):
         ret = []
 
         def helper(temp):
@@ -30,6 +31,5 @@ class Solution:
         helper([])
         return ret
 
-
-x = Solution().permute(['a','b','c'])
+x = Solution().permute(['1','2','3','4'])
 print(x)
