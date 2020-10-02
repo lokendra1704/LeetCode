@@ -10,6 +10,8 @@ class Solution:
             if total>target:
                 return
             for j in range(i,len(candidates)):
+                if j>i and candidates[j]==candidates[j-1]:
+                    continue
                 path.append(candidates[j])
                 backtrack(j+1,path,total+candidates[j])
                 path.pop()
