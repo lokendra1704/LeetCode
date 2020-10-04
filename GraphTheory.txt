@@ -1,0 +1,36 @@
+1.  If a graph has an eulerian walk, then the number of odd degree vertices is either 0 or 2.
+    When number of odd degree vertices = 0, Start = end
+    When number of odd degree vertices = 2, Start != end
+
+2.  What is a graph?
+    A Graph is an ordered pair G=(V,E) where V is a finite set of elements and E is a set of 2-subsets of V.
+    Simple Graph: No loops, No multiple edges (within two vertices).
+    Directed Graph: Graph where each edge has a direction associated to it.
+
+    Order of the Graph |V| : Total number of vertices.
+    Size of the Graph |E|: Total Number of Edges.
+    Disconnected Graph: Where unconnected vertices(or graph) are present.
+
+3.  Families of Graph  
+
+    # Complete Graph
+    A Complete Graph Kn on n vertices is a simple graph with an edge between every pair of vertices.
+    |E| = nC2
+
+    # Bipartite Graph
+    A graph whose vertex set can be partitioned into 2 sets V1 and V2 such that every edge (uv in E) has (u in V1) and (v in V2)
+
+    # Path
+    A Path is a graph whose vertices can be arrange in a sequence
+    v1,v2,v3,v4....
+    such that the edge set is E = {vi,vi+1 | i=1.....n}
+
+    # Cycle
+    A Path is a graph whose vertices can be arrange in a cyclic sequence
+    v1,v2,v3,v4....
+    such that the edge set is E = {vi,vi+1 | i=1.....n} U {v1,vn}
+
+4.  Connected Graph
+    A graph G is connected if for every pair of distinct vertices u,v in V(G) there is a path from u to v in G.
+
+6. Sum of Degree is twice the number of edges.
