@@ -4,7 +4,7 @@ Memory: 82.57%
 Time Complexity: O(n)
 '''
 class Solution:
-    def getRow(self, k: int) -> List[int]:
+    def getRow(self, k):
         res = [1]*(k+1)
         #res[0]=1
         for i in range(1,k):
